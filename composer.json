@@ -1,0 +1,25 @@
+{
+    "name" : "ytvretriever",
+    "description" : "Service for retrieving YouTube Video Details",
+    "type" : "symfony-bundle",
+    "authors" : [{
+        "name" : "Adrian Tilita",
+        "email" : "adrian@tilita.ro"
+    }],
+    "keywords" : [
+        "youtube",
+        "video"
+    ],
+    "license" : [
+        "MIT"
+    ],
+    "autoload" : {
+        "psr-0" : {
+            "YouTubeVideoRetrieverBundle\\" : ""
+        }
+    },
+    "target-dir" : "",
+    "branch-alias" : {
+        "dev-master" : "dev"
+    }
+}

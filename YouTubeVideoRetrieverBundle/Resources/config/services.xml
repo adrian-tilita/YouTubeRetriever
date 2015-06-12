@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <!-- MAIN SERVICE !-->
+        <service id="youtube.video.retriever" class="YouTubeVideoRetrieverBundle\Service\YoutubeVideoRetrieverService">
+            <call method="setURLManagerService">
+                <argument type="service" id="youtube.video.url_manager"/>
+            </call>
+            <call method="setWgetHelper">
+                <argument type="service" id="wget.helper"/>
+            </call>
+            <call method="setParserService">
+                <argument type="service" id="youtube.video.parser_service"/>
+            </call>
+        </service>
+        <service id="youtube.video.url_manager" class="YouTubeVideoRetrieverBundle\Service\URLManagerService"/>
+        <service id="youtube.video.parser_service" class="YouTubeVideoRetrieverBundle\Service\ParserService"/>
+        <service id="wget.helper" class="YouTubeVideoRetrieverBundle\Helper\Wget"/>
+    </services>
+</container>
